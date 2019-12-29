@@ -26,15 +26,33 @@ vault login $TOKEN
 # ----------------------------------------------------------------------------
 # Metoda autentyfikacji oparta o GitHuba (dla pklosows)
 
-vault auth enable -path=my-github github
-vault write auth/my-github/config organization=bpszss
-vault write auth/my-github/map/teams/my_team value=default,my-policy
+vault auth enable github
+#vault auth help github
+vault write auth/github/config organization=bpszss
+vault write auth/github/map/teams/my_team value=default,my-policy
 
 vault auth list
-#vault auth help github
-vault login -method=github -path=my-github token=94db41192279bbb45ca2049879f7efe265a3f541
+vault login -method=github token=f489a06c4c6043018ce23df54d40a406f15b7a7e
 
 
 # Nie uda bez przelogowania na roota!
 vault login $TOKEN
-#vault auth disable my-github
+vault auth disable github
+
+# ----------------------------------------------------------------------------
+# Metoda autentyfikacji oparta o login/hasło
+
+vault auth enable userpass
+#vault auth help userpass
+
+vault write auth/userpass/users/klosowski \
+    password=abcdefg \
+    policies=admins
+
+vault write auth/userpass/users/antyfraud \
+    password=qwerty \
+    policies=automat_zewn
+
+# Nie uda bez przelogowania na roota!
+#vault login $TOKEN
+#vault auth disable userpass

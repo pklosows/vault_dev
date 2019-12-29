@@ -4,4 +4,20 @@ Skrypty edukacyjno-ćwiczeniowe dla opanowania oprogramowania Vault.
 dla wariantu -dev
 ------------------
 
-Dodać autentykację login-hasło
+1. Starting the Server - After installing Vault, the next step is to start the server.
+
+2. Your First Secret - With the Vault server running, let's read and write our first secret.
+
+3. Secrets Engines - Secrets engines create, read, update, and delete secrets.
+
+4. Dynamic Secrets - On this page we introduce dynamic secrets by showing you how to create AWS access keys with Vault.
+
+5. Built-in Help - Vault has a built-in help system to learn about the available paths in Vault and how to use them.
+
+6. Authentication - Users can authenticate to Vault using multiple methods.
+
+7. Policies - Policies in Vault control what a user can access.
+
+
+Deploy Vault - Learn how to deploy Vault, including configuring, starting, initializing, and unsealing it.
+

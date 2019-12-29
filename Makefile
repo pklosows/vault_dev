@@ -3,28 +3,28 @@ KONF=$(BIN)/0-env.sh
 
 all:
 	@echo "-------------------------------------------"
-	@echo "	Dostępne akcje:"
-	@echo "		start - wystartowanie serwera w trybie -dev"
-	@echo "		sekret - stawienie tajnego hasła, odczytanie i usunięcie"
-	@echo "		silnik - dodanie silnika sekretów"
-	@echo "		4-autent - wygenerowanie nowego klucza i zalogowanie się"
-	@echo "		5-autor - policy, autoryzacja"
+	@echo "Dostępne akcje:"
+	@echo "    1-start  - wystartowanie serwera w trybie -dev"
+	@echo "    2-secret - stawienie tajnego hasła, odczytanie i usunięcie"
+	@echo "    3-engine - dodanie silnika sekretów"
+	@echo "    6-autent - wygenerowanie nowego klucza i zalogowanie się"
+	@echo "    7-author - policy, autoryzacja"
 	@echo "-------------------------------------------"
 
-start:
+1-start:
 	$(BIN)/1-start.sh $(KONF)
 
-sekret:
+2-secret:
 	$(BIN)/2-secret.sh $(KONF)
 
-silnik:
+3-engine:
 	$(BIN)/3-engine.sh $(KONF)
 
-4-autent:
-	$(BIN)/4-autent.sh $(KONF)
+6-autent:
+	$(BIN)/6-autent.sh $(KONF)
 
-5-autor: 4-autent
-	$(BIN)/5-autor.sh $(KONF)
+7-author: 6-autent
+	$(BIN)/7-author.sh $(KONF)
 
 clean:
 	rm -f *.txt
